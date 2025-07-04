@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap');
+body {
+    font-size: 16px;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+nav {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+
+    .nav-logo {
+        font-size: 0;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 18px;
+    }
+}
+.nav-icon {
+    background-color: #0bd5aa;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.nav-links {
+    position: absolute;
+    top:100%;
+    left: 0%;
+    list-style: none;
+    margin: 0;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 7px #0000003d;
+    width: 100%;
+    border-radius: 4px;
+    gap: 16px;
+    align-items: center;
+    box-sizing: border-box;
+
+    li {
+        width: 100%;
+
+        a.action-btn {
+            border: 2px solid #0BD5AA;
+            padding: 5px 0;
+            min-width: 90px;
+            border-radius: 50px;
+        }
+        a.action-btn:hover {
+            color: #fff;
+            background-color: #0BD5AA;
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+            color: #4F5352;
+            font-size: 1em;
+            text-align: center;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0BD5AA;
+        }
+        a:active {
+            text-decoration: underline;
+            color: #0BD5AA;
+            font-weight: bold;
+        }
+    }
+    
+}
+
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: center;
+
+        .nav-icon {
+            display: none;
+        }
+        .nav-container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            align-items: center;
+    
+            .nav-links {
+                position: unset;
+                box-shadow: none;
+                flex-direction: row;
+                gap: 20px;
+                justify-content: right;
+                padding: 0;
+
+                li {
+                    width: unset;
+                }
+                
+            }
+        }
+    }
+}
