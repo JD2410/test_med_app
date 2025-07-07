@@ -3,7 +3,7 @@ import './LandingPage.css'
 const LandingPage = () => {
     return (
         <>
-         <section class="hero-section">
+         <section className="hero-section">
         <div>
           <div data-aos="fade-up" className="flex-hero">
               

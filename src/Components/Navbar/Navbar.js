@@ -30,12 +30,12 @@ const Navbar = () => {
             </div>
 
             <ul className="nav-links">
-                <li><a href="../Landing_Page/LandingPage.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#">Appointments</a></li>
                 <li><a href="#">Health Blog</a></li>
                 <li><a href="#">Reviews</a></li>
-                <li><a className="action-btn" href="../Sign_Up/Sign_Up.html">Sign Up</a></li>
-                <li><a className="action-btn" href="../Login/Login.html">Login</a></li>
+                <li><a className="action-btn" href="/signup">Sign Up</a></li>
+                <li><a className="action-btn" href="/login">Login</a></li>
             </ul>
         </div>
     </nav>
