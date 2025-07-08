@@ -1,7 +1,7 @@
 import "./Navbar.css";
 
 const Navbar = () => {
-    const storeEmail = localStorage.getItem('email');
+    const storeEmail = sessionStorage.getItem('email');
     let name = ""
     if (storeEmail) {
         name = storeEmail.substr(0, storeEmail.indexOf("@"));

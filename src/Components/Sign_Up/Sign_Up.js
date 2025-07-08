@@ -30,7 +30,6 @@ const Sign_Up = () => {
             }),
         });
         const json = await response.json(); // Parse the response JSON
-        alert(`${API_URL}/api/auth/register`)
 
         if (json.authtoken) {
             // Store user data in session storage
