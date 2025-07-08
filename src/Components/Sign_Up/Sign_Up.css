@@ -119,7 +119,7 @@
 }
 @media (min-width: 768px) {
     .signup-container {
-        max-width: 390px;
+        max-width: 400px;
         margin: 120px auto 0;
     }
 }
