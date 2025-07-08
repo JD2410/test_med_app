@@ -1,6 +1,11 @@
 import "./Navbar.css";
 
 const Navbar = () => {
+    const storeEmail = localStorage.getItem('email');
+    let name = ""
+    if (storeEmail) {
+        name = storeEmail.substr(0, storeEmail.indexOf("@"));
+    }
     return (
         <>
         <nav>
@@ -34,8 +39,8 @@ const Navbar = () => {
                 <li><a href="#">Appointments</a></li>
                 <li><a href="#">Health Blog</a></li>
                 <li><a href="#">Reviews</a></li>
-                <li><a className="action-btn" href="/signup">Sign Up</a></li>
-                <li><a className="action-btn" href="/login">Login</a></li>
+                { storeEmail ? "" : <li><a className="action-btn" href="/signup">Sign Up</a></li> }
+                { storeEmail ? <li className="loggedin">Welcome, { name }<a className="action-btn" href="/login">Logout</a></li> : <li><a className="action-btn" href="/login">Login</a></li> }
             </ul>
         </div>
     </nav>

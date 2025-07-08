@@ -11,6 +11,7 @@ nav {
     top: 0%;
     left: 0%;
     width: 100%;
+    
 
     .nav-logo {
         font-size: 0;
@@ -23,6 +24,7 @@ nav {
         padding: 10px 18px;
     }
 }
+
 .nav-icon {
     background-color: #0bd5aa;
     width: 40px;
@@ -40,6 +42,7 @@ nav {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 7px #0000003d;
+    background-color: #fff;
     width: 100%;
     border-radius: 4px;
     gap: 16px;
@@ -83,9 +86,17 @@ nav {
 }
 
 @media (min-width: 768px) {
+    .loggedin {
+        display: inline-flex;
+        white-space: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap:4px;
+    }
     nav {
         display: flex;
         justify-content: center;
+        
 
         .nav-icon {
             display: none;
@@ -98,6 +109,7 @@ nav {
             align-items: center;
     
             .nav-links {
+                background-color: unset;
                 position: unset;
                 box-shadow: none;
                 flex-direction: row;
