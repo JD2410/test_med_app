@@ -1,10 +1,31 @@
 import "./Navbar.css";
+import React, { useState } from 'react';
 
 const Navbar = () => {
-    const storeEmail = sessionStorage.getItem('email');
+    const [loginName, setLoginName] = useState(sessionStorage.getItem('auth-token'))
     let name = ""
-    if (storeEmail) {
-        name = storeEmail.substr(0, storeEmail.indexOf("@"));
+    if (loginName) {
+        const getName = sessionStorage.getItem('email');
+        name = getName.substr(0, getName.indexOf("@"))
+    }
+
+    const Logout = (event) => {
+        const getSessionEmail = sessionStorage.getItem('email')
+        if (getSessionEmail) {
+            sessionStorage.removeItem("email")
+        }
+        const getSessionAuth = sessionStorage.getItem('auth-token')
+        if (getSessionAuth) {
+            sessionStorage.removeItem("auth-token")
+        }
+        const getSessionName = sessionStorage.getItem('name')
+        if (getSessionName) {
+            sessionStorage.removeItem("name")
+        }
+        const getSessionPhone = sessionStorage.getItem('phone')
+        if (getSessionPhone) {
+            sessionStorage.removeItem("phone")
+        }
     }
     return (
         <>
@@ -39,8 +60,8 @@ const Navbar = () => {
                 <li><a href="#">Appointments</a></li>
                 <li><a href="#">Health Blog</a></li>
                 <li><a href="#">Reviews</a></li>
-                { storeEmail ? "" : <li><a className="action-btn" href="/signup">Sign Up</a></li> }
-                { storeEmail ? <li className="loggedin">Welcome, { name }<a className="action-btn" href="/login">Logout</a></li> : <li><a className="action-btn" href="/login">Login</a></li> }
+                { loginName ? "" : <li><a className="action-btn" href="/signup">Sign Up</a></li> }
+                { loginName ? <li className="loggedin">Welcome, { name }<a className="action-btn" href="/" onClick={Logout}>Logout</a></li> : <li><a className="action-btn" href="/login">Login</a></li> }
             </ul>
         </div>
     </nav>
