@@ -9,15 +9,15 @@ const Login = () => {
             <form action="">
                 <div className="input">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email address" required></input>
+                    <input type="email" id="email" name="email" placeholder="Email address" required />
                 </div>
                 <div className="input">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password" min="1" required></input>
+                    <input type="password" id="password" name="password" placeholder="Password" min="1" required />
                 </div>
                 <div className="actions">
-                    <input type="reset" value="Reset"></input>
-                    <input type="submit" value="Create"></input>
+                    <input type="reset" value="Reset" />
+                    <input type="submit" value="Create" />
                 </div>
                 <a href="#" className="forgot-password">Forgot Password</a>
             </form>

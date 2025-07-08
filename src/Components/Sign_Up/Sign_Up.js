@@ -9,27 +9,27 @@ const Sign_Up = () => {
         <form action="">
             <div className="input">
                 <label for="role">Role</label>
-                <input type="text" id="role" name="role" placeholder="Enter your role" min="1" required></input>
+                <input type="text" id="role" name="role" placeholder="Enter your role" min="1" required />
             </div>
             <div className="input">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" min="1" required></input>
+                <input type="text" id="name" name="name" placeholder="Enter your name" min="1" required />
             </div>
             <div className="input">
                 <label for="phone">Phone Number</label>
-                <input type="phone" id="phone" name="phone" placeholder="Enter your phone number" max="10" required></input>
+                <input type="phone" id="phone" name="phone" placeholder="Enter your phone number" max="10" required />
             </div>
             <div className="input">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required></input>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required />
             </div>
             <div className="input">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" min="1" required></input>
+                <input type="password" id="password" name="password" placeholder="Enter your password" min="1" required />
             </div>
             <div className="actions">
-                <input type="reset" value="Reset"></input>
-                <input type="submit" value="Create"></input>
+                <input type="reset" value="Reset" />
+                <input type="submit" value="Create" />
             </div>
         </form>
     </div>
