@@ -1,6 +1,4 @@
-.wrapper {
-    background-color: #fff;
-}
+
 .location-search-box {
     display: flex;
     align-items: center;
@@ -91,46 +89,39 @@
     height: 40px;
     padding-left: 5px;
 }
-
+.doctor-search-box .fa.fa-search {
+    position: absolute;
+    right: 10px;
+    color: #0BD5AA;
+}
 .search-doctor-input-box {
-    height: 40px;
     width: 100%;
-    padding: 6px 20px 5px 10px;
+    padding: 9px 12px;
     outline: none;
     cursor: pointer;
     font-size: 14px;
-    border-top-left-radius:5px;
-    border-bottom-left-radius:5px;
-    border-top-right-radius:0;
-    border-bottom-right-radius:0;
-    border:1px solid rgb(59, 58, 58);
+    border-radius: 8px;
+    border: 2px solid #0BD5AA;
 }
 
-.findiconimg{
-    width: 40px;
-    left: 0;
-    background-color: rgb(239, 234, 234);
-    height: 40px;
-    border: 1px solid rgb(59, 58, 58);
-    z-index: -99;
-
-}
 .search-doctor-input-results {
     position: absolute;
-    top: 55%;
+    top: 53%;
     left: 0;
     width: 100%;
     z-index: 5;
-    height: 420px;
     margin-top: 2px;
-    border: 1px solid #555;
+    max-height: 420px;
+    border: 1px solid #0BD5AA;
+    background-color: #fff;
+    box-shadow: 0px 2px 6px #0000004d;
+    border-radius: 4px;
 }
 
 .search-doctor-result-item {
-    height: 60px;
+    height: 30px;
     display: flex;
     align-items: center;
-    background-color: #fff;
     border-bottom: 1px solid #e0e0e0;
     padding: 10px 12px;
     column-gap: 14px;
@@ -143,10 +134,8 @@
 }
 
 .search-doctor-result-item>span:nth-of-type(1) {
-    border: 1px solid #f0f0f5;
-    border-radius: 50%;
-    padding: 8px;
-    background-color: #f0f0f5;
+    color: #0BD5AA;
+    font-size: 22px;
 }
 
 .search-doctor-result-item>span:nth-of-type(2) {
@@ -170,13 +159,27 @@
 }
 
 .finddoctor{
-    /* height: 0 auto; */
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    > div:nth-child(2) {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #4F4C4C;
+
+        h1 {
+            font-family: "Merriweather", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+            padding: 20px 0;
+        }
+    }
 } 
-.finddoctor .mainimg{
-    width: 312px;
-    height: 312px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 5px;
-}

@@ -10,9 +10,6 @@
     box-shadow: 0 0 5px rgba(45, 45, 50, 0.17);
     border-radius: 8px;
 }
-.searchpage-container img {
-    max-width: 100%;
-}
 .search-results-container .doctorcard{
     display:flex;
     flex-direction:column;
@@ -24,7 +21,6 @@
     background-color: #fff;
 
 }
-
 .search-results-container>h2 {
     text-align: left;
     font-size: 24px;
