@@ -62,11 +62,11 @@ const Sign_Up = () => {
             </div>
             <div className="input">
                 <label for="name">Name</label>
-                <input value={name} onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter your name" min="1" required />
+                <input value={name} onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" placeholder="Enter your name" min="4" required />
             </div>
             <div className="input">
                 <label for="phone">Phone Number</label>
-                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" id="phone" name="phone" placeholder="Enter your phone number" max="10" required />
+                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="phone" id="phone" name="phone" placeholder="Enter your phone number" min="10" required />
             </div>
             <div className="input">
                 <label for="email">Email</label>
@@ -74,7 +74,7 @@ const Sign_Up = () => {
             </div>
             <div className="input">
                 <label for="password">Password</label>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" placeholder="Enter your password" min="1" required />
+                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" placeholder="Enter your password" min="8" required />
             </div>
             <div className="actions">
                 {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
