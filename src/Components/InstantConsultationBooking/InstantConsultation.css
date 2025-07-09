@@ -1,11 +1,14 @@
 .searchpage-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
-    margin-top:10%;
     color: #414146;
     padding: 0 20px;
     position: static;
-    width: 100%;
+    margin: 80px 20px 0px;
+    min-height: calc(100vh - 100px);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(45, 45, 50, 0.17);
+    border-radius: 8px;
 }
 .searchpage-container img {
     max-width: 100%;

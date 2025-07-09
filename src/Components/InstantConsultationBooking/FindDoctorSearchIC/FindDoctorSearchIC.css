@@ -1,3 +1,6 @@
+.wrapper {
+    background-color: #fff;
+}
 .location-search-box {
     display: flex;
     align-items: center;

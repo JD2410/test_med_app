@@ -2,6 +2,7 @@ import "./Navbar.css";
 import React, { useState } from 'react';
 
 const Navbar = () => {
+    const [mobileOpen, setMobileOpen] = useState(false)
     const [loginName, setLoginName] = useState(sessionStorage.getItem('auth-token'))
     let name = ""
     if (loginName) {
@@ -27,6 +28,9 @@ const Navbar = () => {
             sessionStorage.removeItem("phone")
         }
     }
+    const OpenMobileMenu = () => {
+        mobileOpen ? setMobileOpen(false) : setMobileOpen(true)
+    }
     return (
         <>
         <nav>
@@ -51,11 +55,10 @@ const Navbar = () => {
                 </a>
             </div>
 
-            <div className="nav-icon">
+            <div className="nav-icon" onClick={() => OpenMobileMenu()}>
                 <i className="fa fa-times fa fa-bars"></i>
             </div>
-
-            <ul className="nav-links">
+            <ul className={"nav-links " + (mobileOpen ? "active" : "")}>
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Appointments</a></li>
                 <li><a href="#">Health Blog</a></li>
