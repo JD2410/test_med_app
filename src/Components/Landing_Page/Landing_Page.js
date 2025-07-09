@@ -8,11 +8,8 @@ const LandingPage = () => {
           <div data-aos="fade-up" className="flex-hero">
               
               <h1>
-                Your Health<br/>
-                <span className="text-gradient">
-                  
-                  Our Responsibility
-                </span>
+                <span className='health'>Your Health</span><br/>
+                <span className="resposibility">Our Responsibility</span>
               </h1>
                 <div className="blob-cont">
                     <div className="blue blob"></div>

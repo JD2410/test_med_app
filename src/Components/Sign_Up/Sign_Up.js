@@ -52,6 +52,7 @@ const Sign_Up = () => {
     };
     return (
         <>
+        <div className='wrapper'>
         <div className="signup-container">
         <h1>Sign up</h1>
         <p>Already a member? <a href="../Login/Login.html">Login</a></p>
@@ -82,6 +83,7 @@ const Sign_Up = () => {
                 <input type="submit" value="Create" />
             </div>
         </form>
+    </div>
     </div>
         </>
     )

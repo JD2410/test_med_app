@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap');
 
 .signup-container {
-    font-family: "Source Sans 3", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    box-shadow: 0 5px 8px #00000047;
-    padding: 19px;
-    border-radius: 7px;
-    text-align: center;
-    font-size: 16px;
 
     .forgot-password {
         margin: 30px 0 10px;

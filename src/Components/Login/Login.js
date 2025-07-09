@@ -54,6 +54,7 @@ const Login = () => {
   };
     return (
         <>
+        <div className="wrapper">
         <div className="signup-container">
             <h1>Login</h1>
             <p>Not a member yet? <a href="../Sign_Up/Sign_Up.html">Create Account</a></p>
@@ -72,7 +73,7 @@ const Login = () => {
                 </div>
                 <a href="#" className="forgot-password">Forgot Password</a>
             </form>
-        </div>
+        </div></div>
         </>
     )
 }
