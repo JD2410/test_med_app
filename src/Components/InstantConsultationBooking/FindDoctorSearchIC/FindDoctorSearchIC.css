@@ -68,9 +68,6 @@
 
 }
 
-
-
-
 .doctor-search-box {
     display: flex;
     align-items: center;
@@ -158,9 +155,10 @@
     align-items: center;
 }
 
-.finddoctor{
+.finddoctor {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
     > div:nth-child(2) {
         
@@ -183,3 +181,10 @@
         }
     }
 } 
+
+@media (min-width: 768px) {
+    .finddoctor { 
+        padding-top: 40px;
+        flex-direction: row;
+    }
+}
