@@ -1,4 +1,4 @@
-.doctor-card-container {
+.doctor-card-container.ic {
     width: 250px;
     height: 100%;
     border: 1px solid #e4e4e4;
@@ -8,13 +8,13 @@
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    background-image: url('doctor-pattern.png');
+    background-image: url('../../../Assets/doctor-pattern.png');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;
     padding-bottom: 20px;
-  }
- 
+
+    
   .cancel-appointment {
     background-color: red;
   }
@@ -208,3 +208,6 @@ button:hover {
   cursor: pointer;
   /* color: rgb(249, 60, 60); */
 }
+
+  }
+ 
