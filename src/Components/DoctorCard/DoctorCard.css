@@ -14,10 +14,9 @@
     background-size: contain;
     padding-bottom: 20px;
 
-    
-  .cancel-appointment {
-    background-color: red;
-  }
+    .cancel-appointment {
+        background-color: red;
+    }
   
   .doctor-card-details-container {
     padding: 20px;

@@ -90,6 +90,8 @@
     font-size: 12px;
     font-weight: bold;
   }
+
+  }
   .modal-container {
   position: fixed;
   top: 0;
@@ -182,6 +184,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
@@ -208,6 +211,3 @@ button:hover {
   cursor: pointer;
   /* color: rgb(249, 60, 60); */
 }
-
-  }
- 
