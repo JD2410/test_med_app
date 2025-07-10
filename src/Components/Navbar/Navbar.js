@@ -60,7 +60,7 @@ const Navbar = () => {
             </div>
             <ul className={"nav-links " + (mobileOpen ? "active" : "")}>
                 <li><a href="/">Home</a></li>
-                <li><a href="#">Appointments</a></li>
+                <li><a href="/appointments">Appointments</a></li>
                 <li><a href="#">Health Blog</a></li>
                 <li><a href="/instant-consultation">Instant Consultation</a></li>
                 <li><a href="#">Reviews</a></li>

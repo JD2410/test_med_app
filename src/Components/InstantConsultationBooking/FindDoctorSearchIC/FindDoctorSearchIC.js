@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FindDoctorSearchIC.css';
 import { useNavigate, Navigate } from 'react-router-dom';
-import doctorImage from './find_a_doctor.png';
+import doctorImage from '../../../Assets/find_a_doctor.png';
 
 const initSpeciality = [
     'Dentist', 'Gynecologist/obstetrician', 'General Physician', 'Dermatologist', 'Ear-nose-throat (ent) Specialist', 'Homeopath', 'Ayurveda'
@@ -18,8 +18,13 @@ const FindDoctorSearchIC = () => {
         navigate(`/instant-consultation?speciality=${speciality}`);
         window.location.reload();
     }
+    const handleSpecialistDropdown = (value) => {
+        setSearchDoctor(value)
+        const remove = initSpeciality.filter(special => special.toLowerCase().includes(value.toLowerCase()))
+        setSpecialities(remove)
+    }
     return (
-        <div className='finddoctor'>
+        <div className='instant finddoctor'>
             <div>
                 <img src={doctorImage} width="260px" height="260px" />
             </div>
@@ -29,7 +34,7 @@ const FindDoctorSearchIC = () => {
             <div className="home-search-container"  style={{display:'flex',justifyContent:'center',alignItems:'center'}}> 
                 <div className="doctor-search-box">
                 {/* <p>Perform a search to see the results.</p> */}
-                    <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => setSearchDoctor(e.target.value)} />  
+                    <input type="text" className="search-doctor-input-box" placeholder="Search doctors, clinics, hospitals, etc." onFocus={() => setDoctorResultHidden(false)} onBlur={() => setDoctorResultHidden(true)} value={searchDoctor} onChange={(e) => handleSpecialistDropdown(e.target.value)} />  
                     <i className="fa fa-search"></i>
                     <div className="search-doctor-input-results" hidden={doctorResultHidden}>
                         {
