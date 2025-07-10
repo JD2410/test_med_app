@@ -8,7 +8,7 @@
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    background-image: url('../../../Assets/doctor-pattern.png');
+    background-image: url('../../Assets/doctor-pattern.png');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: contain;

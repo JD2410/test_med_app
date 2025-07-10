@@ -16,7 +16,7 @@ const FindDoctorSearch = () => {
     const handleDoctorSelect = (speciality) => {
         setSearchDoctor(speciality);
         setDoctorResultHidden(true);
-        navigate(`/instant-consultation?speciality=${speciality}`);
+        navigate(`/appointmentsgi?speciality=${speciality}`);
         window.location.reload();
     }
     const handleSpecialistDropdown = (value) => {
@@ -25,8 +25,6 @@ const FindDoctorSearch = () => {
         setSpecialities(remove)
     }
     return (
-        <center>
-        <div className='searchpage-container'>
         <div className='appointment finddoctor'>
             <div>
                 <img src={doctorImage} width="260px" height="260px" />
@@ -52,8 +50,6 @@ const FindDoctorSearch = () => {
             </div>
             </div>
         </div>
-        </div>
-        </center>
     )
 }
 
