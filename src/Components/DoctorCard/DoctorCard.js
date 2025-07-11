@@ -16,6 +16,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const handleCancel = (appointmentId) => {
       const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
       setAppointments(updatedAppointments);
+      localStorage.removeItem(name)
     };
   
     const handleFormSubmit = (appointmentData) => {

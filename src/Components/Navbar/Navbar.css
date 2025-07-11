@@ -1,11 +1,12 @@
 
 nav {
     position: fixed;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100%;
     background-color: #FAFEFD;
     margin: 2px;
+    z-index: 2000;
     
     .nav-logo {
         font-size: 0;
