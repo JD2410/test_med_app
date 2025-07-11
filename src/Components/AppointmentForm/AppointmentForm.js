@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { display } from '../../notificationSlice'
 
 const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
+    const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [appointmentDate, setAppointmentDate] = useState('');
@@ -27,6 +30,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         date: appointmentDate,
         time: appointmentTime
       }))
+      dispatch(display())
     };
   
     return (

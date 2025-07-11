@@ -1,7 +1,9 @@
 import "./Navbar.css";
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    
     const [mobileOpen, setMobileOpen] = useState(false)
     const [loginName, setLoginName] = useState(sessionStorage.getItem('auth-token'))
     let name = ""

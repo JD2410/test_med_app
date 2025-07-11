@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Notification.css'
+import { useSelector } from 'react-redux';
 
 const Notification = ({ children }) => {
   
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-  
+  const notification = useSelector((state) => state.notification.value);
+
   useEffect(() => {
+    setAppointmentData(null)
+
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
     const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
@@ -24,7 +28,7 @@ const Notification = ({ children }) => {
     if (storedAppointmentData) {
       setAppointmentData(storedAppointmentData);
     }
-  }, []);
+  }, [notification]);
 
   return (
     <div>

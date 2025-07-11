@@ -4,10 +4,13 @@ import 'reactjs-popup/dist/index.css';
 import './DoctorCard.css';
 import AppointmentForm from '../AppointmentForm/AppointmentForm'
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { hide } from '../../notificationSlice';
 
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
     const [showModal, setShowModal] = useState(false);
     const [appointments, setAppointments] = useState([]);
+    const dispatch = useDispatch();
   
     const handleBooking = () => {
       setShowModal(true);
@@ -17,6 +20,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
       const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
       setAppointments(updatedAppointments);
       localStorage.removeItem(name)
+      localStorage.removeItem("doctorData")
+      dispatch(hide())
     };
   
     const handleFormSubmit = (appointmentData) => {
