@@ -6,7 +6,7 @@ nav {
     width: 100%;
     background-color: #FAFEFD;
     margin: 2px;
-    z-index: 2000;
+    z-index: 100;
     
     .nav-logo {
         font-size: 0;
