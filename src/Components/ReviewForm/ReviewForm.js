@@ -39,8 +39,10 @@ const ReviewForm = () => {
     } else {
       setShowWarning(true);
     }
-    
   };
+  const setRating = (star) => {
+    setFormData({ ...formData, rating: star });
+  }
   const cancelReview = () => {
     setFormData({
       doctorIndex: 0,
@@ -113,7 +115,15 @@ const ReviewForm = () => {
                     <label htmlFor="review">Review:</label>
                     <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
                 </div>
-                {/* Submit button for form submission */}
+                <label>Rating:</label>
+                <div className={"selected-rating-" + formData.rating}>
+                    
+                    <span class="fa fa-star" onClick={() => { setRating(1) }}></span>
+                    <span class="fa fa-star" onClick={() => { setRating(2) }}></span>
+                    <span class="fa fa-star" onClick={() => { setRating(3) }}></span>
+                    <span class="fa fa-star" onClick={() => { setRating(4) }}></span>
+                    <span class="fa fa-star" onClick={() => { setRating(5) }}></span>
+                </div>
                 <div className='actions'>
                     <button type="submit">Submit</button>
                     <button onClick={cancelReview}>Cancel</button>

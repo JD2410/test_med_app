@@ -98,5 +98,41 @@
         textarea {
             height: 200px;
         }
+        .fa-star {
+            color: rgba(255, 196, 0, 0.144);
+            font-size: 2em;
+            margin-right: 4px;
+            cursor: pointer;
+        }
+        .selected-rating-1 {
+
+            .fa-star:nth-child(1) { color: rgba(255, 196, 0); }
+        }
+        .selected-rating-2 {
+
+            .fa-star:nth-child(1) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(2) { color: rgba(255, 196, 0); }
+        }
+        .selected-rating-3 {
+
+            .fa-star:nth-child(1) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(2) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(3) { color: rgba(255, 196, 0); }
+        }
+        .selected-rating-4 {
+
+            .fa-star:nth-child(1) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(2) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(3) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(4) { color: rgba(255, 196, 0); }
+        }
+        .selected-rating-5 {
+            
+            .fa-star:nth-child(1) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(2) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(3) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(4) { color: rgba(255, 196, 0); }
+            .fa-star:nth-child(5) { color: rgba(255, 196, 0); }
+        }
     }
 }
