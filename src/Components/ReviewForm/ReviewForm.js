@@ -4,17 +4,18 @@ import './ReviewForm.css'
 const ReviewForm = () => {
     const [doctors, setDoctors] = useState(false);
     const [showForm, setShowForm] = useState(false);
-    const [submittedMessage, setSubmittedMessage] = useState('');
     const [showWarning, setShowWarning] = useState(false);
     const [formData, setFormData] = useState({
+        doctorIndex: 0,
         name: '',
         review: '',
-        rating: 0
+        rating: 1
     });
 
      // Function to handle button click event
-  const handleButtonClick = () => {
+  const handleButtonClick = (ele) => {
     setShowForm(true);
+    setFormData({ ...formData, doctorIndex: ele });
   };
   // Function to handle form input changes
   const handleChange = (e) => {
@@ -24,19 +25,32 @@ const ReviewForm = () => {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmittedMessage(formData);
-    setFormData({
-      name: '',
-      review: '',
-      rating: 0
-    });
     // Check if all required fields are filled before submission
     if (formData.name && formData.review && formData.rating > 0) {
-      setShowWarning(false);
+        const newDoctors = [...doctors];
+        const reviewObj = {
+            name: formData.name,
+            review: formData.review,
+            rating: formData.rating
+        }
+        newDoctors[parseInt(formData.doctorIndex)].review = reviewObj;
+        setDoctors(newDoctors);
+        cancelReview()
     } else {
       setShowWarning(true);
     }
+    
   };
+  const cancelReview = () => {
+    setFormData({
+      doctorIndex: 0,
+      name: '',
+      review: '',
+      rating: 1
+    });
+    setShowWarning(false);
+    setShowForm(false);
+  }
 
     useEffect(() => {
         fetch('https://api.npoint.io/9a5543d36f1460da2f63')
@@ -65,8 +79,20 @@ const ReviewForm = () => {
                             <div><span>{element.name}</span><span>{element.experience} years of experience</span></div>
                             <div>{element.speciality}</div>
                             <div>{element.ratings}</div>
-                            <div><button className="feedback" onClick={handleButtonClick}>Give Feedback</button></div>
-                            <div><i>No feedback given</i></div>
+                            <div>
+                            {element.review ? (
+                                <button className="feedback disabled" disabled>Give Feedback</button>
+                            ) : (
+                                <button className="feedback" onClick={() => { handleButtonClick(index) }}>Give Feedback</button>
+                            )}
+                            </div>
+                            <div>
+                            {element.review ? (
+                                <strong>{element.review.review}</strong>
+                            ) : (
+                                <i>No feedback given</i>
+                            )}
+                            </div>
                         </div>
                     )) : "no"}
                 </div>
@@ -88,7 +114,11 @@ const ReviewForm = () => {
                     <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
                 </div>
                 {/* Submit button for form submission */}
-                <button type="submit">Submit</button>
+                <div className='actions'>
+                    <button type="submit">Submit</button>
+                    <button onClick={cancelReview}>Cancel</button>
+                </div>
+                
             </form>
         </div>
         
