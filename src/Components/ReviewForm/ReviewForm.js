@@ -74,28 +74,24 @@ const ReviewForm = () => {
         </center>
         {!showForm ? ( "" ) : (
         // Display form for giving feedback
-        <form onSubmit={handleSubmit}>
-          <h2>Give Your Feedback</h2>
-          {/* Display warning message if not all fields are filled */}
-          {showWarning && <p className="warning">Please fill out all fields.</p>}
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="review">Review:</label>
-            <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
-          </div>
-          {/* Submit button for form submission */}
-          <button type="submit">Submit</button>
-        </form>
-      )}
-      {/* Display the submitted message if available */}
-      {submittedMessage && (
-        <div>
-          <h3>Submitted Message:</h3>
-          <p>{submittedMessage}</p>
+        <div className='modal'>
+            <form onSubmit={handleSubmit}>
+                <h2>Give Your Feedback</h2>
+                {/* Display warning message if not all fields are filled */}
+                {showWarning && <p className="warning">Please fill out all fields.</p>}
+                <div>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+                </div>
+                <div>
+                    <label htmlFor="review">Review:</label>
+                    <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
+                </div>
+                {/* Submit button for form submission */}
+                <button type="submit">Submit</button>
+            </form>
         </div>
+        
       )}
         </>
     )
