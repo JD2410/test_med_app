@@ -1,4 +1,5 @@
 .review-form-container {
+    font-family: "Source Sans 3";
     max-width: 1400px;
     margin: auto;
     color: #414146;
@@ -21,9 +22,17 @@
         
         .row, .header-row {
             display: grid;
-            grid-template-columns: 10fr 20fr 20fr 15fr 30fr;
+            grid-template-columns: 20fr 20fr 10fr 15fr 35fr;
             align-items: center;
             
+            span {
+                display: block;
+                font-weight: 700;
+            }
+            span:last-child {
+                font-weight: 400;
+                font-size: 0.95em;
+            }
             .header {
                 font-weight: 700;
                 background-color: #EDEDED;
@@ -41,6 +50,5 @@
             background-color: #F7F7F7;
         }
 
-        
     }
 }
