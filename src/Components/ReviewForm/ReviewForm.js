@@ -1,6 +1,20 @@
+import React, { useState, useEffect } from 'react';
 import './ReviewForm.css'
 
 const ReviewForm = () => {
+    const [doctors, setDoctors] = useState(false);
+
+     const getDoctorsDetails = () => {
+        fetch('https://api.npoint.io/9a5543d36f1460da2f63')
+        .then(res => res.json())
+        .then(data => {
+            setDoctors(data);
+        })
+        .catch(err => console.log(err));
+    }
+    useEffect(() => {
+        getDoctorsDetails();
+    }, [])
     return (
         <center>
             <div className="review-form-container">
@@ -13,27 +27,15 @@ const ReviewForm = () => {
                         <div className="header">Provide Feedback</div>
                         <div className="header">Review Given</div>
                     </div>
-                    <div className="row">
-                        <div>2</div>
-                        <div>Mark</div>
-                        <div>Dentist</div>
-                        <div><button className="feedback">Provide Feedback</button></div>
-                        <div><i>No feedback given</i></div>
-                    </div>
-                    <div className="row">
-                        <div>2</div>
-                        <div>Mark</div>
-                        <div>Dentist</div>
-                        <div><button className="feedback">Provide Feedback</button></div>
-                        <div><i>No feedback given</i></div>
-                    </div>
-                    <div className="row">
-                        <div>2</div>
-                        <div>Mark</div>
-                        <div>Dentist</div>
-                        <div><button className="feedback">Provide Feedback</button></div>
-                        <div><i>No feedback given</i></div>
-                    </div>
+                    {doctors ? doctors.map((element, index) => (
+                        <div key={index} className="row">
+                            <div>{index}</div>
+                            <div>{element.name}</div>
+                            <div>{element.speciality}</div>
+                            <div><button className="feedback">Provide Feedback</button></div>
+                            <div><i>No feedback given</i></div>
+                        </div>
+                    )) : "no"}
                 </div>
             </div>
         </center>
@@ -41,3 +43,4 @@ const ReviewForm = () => {
 }
 
 export default ReviewForm
+
