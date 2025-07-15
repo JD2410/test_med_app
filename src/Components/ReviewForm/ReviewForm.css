@@ -1,0 +1,46 @@
+.review-form-container {
+    max-width: 1400px;
+    margin: auto;
+    color: #414146;
+    padding: 20px;
+    position: static;
+    margin: 80px 20px 0px;
+    min-height: calc(100vh - 100px);
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(45, 45, 50, 0.17);
+    border-radius: 8px;
+    text-align: left;
+
+    h1 {
+        margin: 0 0 20px 0;
+    }
+    .review-table {
+        width: 100%;
+        border: 1px solid #EDEDED;
+        box-sizing: border-box;
+        
+        .row, .header-row {
+            display: grid;
+            grid-template-columns: 10fr 20fr 20fr 15fr 30fr;
+            align-items: center;
+            
+            .header {
+                font-weight: 700;
+                background-color: #EDEDED;
+            }
+
+            div {
+                padding: 8px;
+            }
+            .feedback {
+                padding: 6px 12px;
+                border-radius: 6px;
+            }
+        }
+        .row:nth-child(odd) {
+            background-color: #F7F7F7;
+        }
+
+        
+    }
+}
