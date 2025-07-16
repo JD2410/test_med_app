@@ -44,6 +44,7 @@ const Profile = () => {
           const user = await response.json();
           setUserDetails(user);
           setUpdatedDetails(user);
+          console.log(user)
         } else {
           // Handle error case
           throw new Error("Failed to fetch user profile");
@@ -62,10 +63,12 @@ const Profile = () => {
 
   // Function to update state when user inputs new data
   const handleInputChange = (e) => {
+    
     setUpdatedDetails({
       ...updatedDetails,
       [e.target.name]: e.target.value,
     });
+    console.log(updatedDetails)
   };
 
   // Function to handle form submission when user saves changes
@@ -114,7 +117,9 @@ const Profile = () => {
 
   // Render the profile form with different sections based on edit mode
   return (
+    <center>
     <div className="profile-container">
+        <h1>Profile Section</h1>
       {editMode ? (
         <form onSubmit={handleSubmit}>
           <label>
@@ -127,16 +132,53 @@ const Profile = () => {
             />
           </label>
           {/* Create similar logic for displaying and editing name and phone from userDetails */}
+          <label>
+            Name
+            <input
+              type="name"
+              name="name"
+              value={updatedDetails.name} 
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
+            Phone Number
+            <input
+              type="phone"
+              name="phone"
+              value={updatedDetails.phone} 
+              onChange={handleInputChange}
+            />
+          </label>
           <button type="submit">Save</button>
         </form>
       ) : (
         <div className="profile-details">
-          <h1>Welcome, {userDetails.name}</h1>
+          <h3>Welcome, {userDetails.name}</h3>
+          <div className="userDetails">
+            <div className="row">
+                <div>Unique Identification</div>
+                <div>{userDetails.id ? (userDetails.id) : ("Loading")}</div>
+            </div>
+            <div className="row">
+                <div>Name</div>
+                <div>{userDetails.name ? (userDetails.name) : ("Loading")}</div>
+            </div>
+            <div className="row">
+                <div>Email</div>
+                <div>{userDetails.email ? (userDetails.email) : ("Loading")}</div>
+            </div>
+            <div className="row">
+                <div>Phone Number</div>
+                <div>{userDetails.phone ? (userDetails.phone) : ("Loading")}</div>
+            </div>
+          </div>
           {/* Implement code to display and allow editing of phone and email similar to above */}
-          <button onClick={handleEdit}>Edit</button>
+          <button onClick={handleEdit}>Edit Details</button>
         </div>
       )}
     </div>
+    </center>
   );
 };
 
