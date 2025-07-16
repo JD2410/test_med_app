@@ -67,7 +67,16 @@ const Navbar = () => {
                 <li><a href="/instant-consultation">Instant Consultation</a></li>
                 <li><a href="/reviews">Reviews</a></li>
                 { loginName ? "" : <li><a className="action-btn" href="/signup">Sign Up</a></li> }
-                { loginName ? <li className="loggedin">Welcome, { name }<a className="action-btn" href="/" onClick={Logout}>Logout</a></li> : <li><a className="action-btn" href="/login">Login</a></li> }
+                { loginName ? (
+                    <li className="loggedin">
+                        <div className="dropdown">
+                            <div className="loginlabel">Welcome, { name }</div>
+                            <ul className="dropdown-content">
+                                <li><a href="/profile">Your Profile</a></li>
+                            </ul>
+                        </div>
+                    <a className="action-btn" href="/" onClick={Logout}>Logout</a></li>
+                ) : (<li><a className="action-btn" href="/login">Login</a></li>) }
             </ul>
         </div>
     </nav>

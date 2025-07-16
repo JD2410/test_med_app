@@ -9,6 +9,7 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import Appointments from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 import Reviews from './Components/ReviewForm/ReviewForm';
+import Profile from './Components/ProfileCard/ProfileCard'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/instant-consultation" element={<InstantConsultation/>}/>
                 <Route path="/appointments" element={<Appointments/>}/>
                 <Route path="/reviews" element={<Reviews/>}/>
+                <Route path="/profile" element={<Profile/>}/>
             </Routes>
           </Notification>
         </BrowserRouter>
