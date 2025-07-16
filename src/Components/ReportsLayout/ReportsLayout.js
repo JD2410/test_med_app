@@ -1,5 +1,6 @@
 import "./ReportsLayout.css"
 import React, { useState, useEffect } from 'react';
+import Pdf from '../../patient_report.pdf'
 
 const Reports = () => {
     const [doctors, setDoctors] = useState(false);
@@ -30,8 +31,8 @@ const Reports = () => {
                             <div>{index}</div>
                             <div>{element.name}</div>
                             <div>{element.speciality}</div>
-                            <div><button className="feedback">View Report</button></div>
-                            <div><button className="feedback">View Report</button></div>
+                            <div><a href={Pdf} target="_blank">View Report</a></div>
+                            <div><a href={Pdf} download>Download Report</a></div>
                         </div>
                     )) : "Loading"}
                 </div>
