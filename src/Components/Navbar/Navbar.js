@@ -73,6 +73,7 @@ const Navbar = () => {
                             <div className="loginlabel">Welcome, { name }</div>
                             <ul className="dropdown-content">
                                 <li><a href="/profile">Your Profile</a></li>
+                                <li><a href="/reports">Your Reports</a></li>
                             </ul>
                         </div>
                     <a className="action-btn" href="/" onClick={Logout}>Logout</a></li>
