@@ -23,7 +23,7 @@ const Sign_Up = () => {
         }
     }
     const handlePasswordBlurValidation = () => {
-        if(phone.trim().length < 10) {
+        if(password.trim().length < 10) {
             setPasswordErr(true)
         } else {
             setPasswordErr(false)
@@ -34,7 +34,7 @@ const Sign_Up = () => {
         e.preventDefault(); // Prevent default form submission
         handlePasswordBlurValidation()
         handlePhoneBlurValidation();
-        
+
         if(!passwordErr && !phoneErr) {
             // API Call to register user
             const response = await fetch(`${API_URL}/api/auth/register`, {

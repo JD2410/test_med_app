@@ -9,6 +9,7 @@ const Login = () => {
     // State variables for email and password
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');
+  const [passwordErr, setPasswordErr] = useState(false)
   // Get navigation function from react-router-dom
   const navigate = useNavigate();
   // Check if user is already authenticated, then redirect to home page
@@ -17,40 +18,50 @@ const Login = () => {
         navigate("/");
         }
     }, []);
-
+    const handlePasswordBlurValidation = () => {
+        if(password.trim().length < 10) {
+            setPasswordErr(true)
+        } else {
+            setPasswordErr(false)
+        }
+    }
     // Function to handle login form submission
   const login = async (e) => {
     e.preventDefault();
-    // Send a POST request to the login API endpoint
-    const res = await fetch(`${API_URL}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
-    // Parse the response JSON
-    const json = await res.json();
-    if (json.authtoken) {
-      // If authentication token is received, store it in session storage
-      sessionStorage.setItem('auth-token', json.authtoken);
-      sessionStorage.setItem('email', email);
-      // Redirect to home page and reload the window
-      navigate('/');
-      window.location.reload();
-    } else {
-      // Handle errors if authentication fails
-      if (json.errors) {
-        for (const error of json.errors) {
-          alert(error.msg);
+    handlePasswordBlurValidation()
+    
+    if(!passwordErr) {
+        const res = await fetch(`${API_URL}/api/auth/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        });
+        // Parse the response JSON
+        const json = await res.json();
+        if (json.authtoken) {
+            // If authentication token is received, store it in session storage
+            sessionStorage.setItem('auth-token', json.authtoken);
+            sessionStorage.setItem('email', email);
+            // Redirect to home page and reload the window
+            navigate('/');
+            window.location.reload();
+        } else {
+        // Handle errors if authentication fails
+        if (json.errors) {
+            for (const error of json.errors) {
+                alert(error.msg);
+            }
+        } else {
+            alert(json.error);
         }
-      } else {
-        alert(json.error);
-      }
+        }
     }
+    
   };
     return (
         <>
@@ -65,7 +76,8 @@ const Login = () => {
                 </div>
                 <div className="input">
                     <label for="password">Password</label>
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} min="8" required type="password" id="password" name="password" placeholder="Password"  />
+                    <input value={password} onChange={(e) => setPassword(e.target.value)} onBlur={handlePasswordBlurValidation} required type="password" id="password" name="password" placeholder="Password"  />
+                    {passwordErr ? <p className="inputerror">Password must be a minimum of 8 characters</p> : ""}
                 </div>
                 <div className="actions">
                     <input type="reset" value="Reset" />
