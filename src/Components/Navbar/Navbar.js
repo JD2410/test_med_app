@@ -63,7 +63,6 @@ const Navbar = () => {
             <ul className={"nav-links " + (mobileOpen ? "active" : "")}>
                 <li><a href="/">Home</a></li>
                 <li><a href="/appointments">Appointments</a></li>
-                <li><a href="#">Health Blog</a></li>
                 <li><a href="/instant-consultation">Instant Consultation</a></li>
                 <li><a href="/reviews">Reviews</a></li>
                 { loginName ? "" : <li><a className="action-btn" href="/signup">Sign Up</a></li> }
