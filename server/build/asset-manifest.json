@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f742ae2.css",
+    "main.js": "/static/js/main.35790243.js",
+    "static/js/453.601f6c04.chunk.js": "/static/js/453.601f6c04.chunk.js",
+    "static/media/patient_report.pdf": "/static/media/patient_report.f73757e105b242f0fce5.pdf",
+    "static/media/booking-appointment.png": "/static/media/booking-appointment.5c3309701cf54c9b9530.png",
+    "static/media/find_a_doctor.png": "/static/media/find_a_doctor.8a650688f496931ccdc5.png",
+    "static/media/background-shape.png": "/static/media/background-shape.0ed4946b16aa8535ac36.png",
+    "index.html": "/index.html",
+    "main.6f742ae2.css.map": "/static/css/main.6f742ae2.css.map",
+    "main.35790243.js.map": "/static/js/main.35790243.js.map",
+    "453.601f6c04.chunk.js.map": "/static/js/453.601f6c04.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f742ae2.css",
+    "static/js/main.35790243.js"
+  ]
+}
